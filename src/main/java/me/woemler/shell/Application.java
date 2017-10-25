@@ -24,7 +24,7 @@ public class Application {
   }
 
   private static String[] getActiveProfiles(String[] args){
-    return args.length > 0 ? new String[]{"jc"} : new String[]{};
+    return Arrays.asList(args).contains("-X") ? new String[]{"jc"} : new String[]{};
   }
 
 }

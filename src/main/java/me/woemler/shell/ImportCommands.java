@@ -24,7 +24,7 @@ public class ImportCommands {
   }
 
   @ShellMethod(key = "jc", value = "Imports the a file of a specified type.")
-  public String jCommanderFileImport(@ShellOption(optOut = true) JCommanderImportCommands commands){
+  public String jCommanderFileImport(@ShellOption(optOut = true) JCommanderCommands.ImportCommands commands){
     System.out.println(String.format("Importing file=%s  dataType=%s  overwrite=%s", 
         commands.getFile(), commands.getDataType(), commands.getOverwrite()));
     return commands.getFile().getAbsolutePath();
