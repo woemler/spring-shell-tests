@@ -1,13 +1,14 @@
 package me.woemler.shell;
 
 import java.io.File;
+import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 
 /**
  * @author woemler
  */
-//@ShellComponent
+@ShellComponent
 public class ImportCommands {
 
   public static enum DataType { SAMPLE, GENE, DATA }
