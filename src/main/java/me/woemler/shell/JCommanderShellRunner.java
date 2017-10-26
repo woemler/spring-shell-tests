@@ -9,11 +9,10 @@ import org.springframework.boot.ApplicationRunner;
  * @author woemler
  */
 public class JCommanderShellRunner implements ApplicationRunner {
-
+  
   @Override
   public void run(ApplicationArguments args) throws Exception {
     
-    System.out.println(args.getNonOptionArgs());
     JCommanderCommands.ImportCommands importCommands = new JCommanderCommands.ImportCommands();
     JCommanderCommands.DefaultCommands defaultCommands = new DefaultCommands();
     
@@ -27,8 +26,7 @@ public class JCommanderShellRunner implements ApplicationRunner {
     if (defaultCommands.isHelp()){
       jCommander.usage();
     } else if ("import".equals(jCommander.getParsedCommand())){
-      System.out.println(String.format("Importing file=%s  dataType=%s  overwrite=%s",
-          importCommands.getFile(), importCommands.getDataType(), importCommands.getOverwrite()));  
+      System.out.println(String.format("Importing with commands: %s", importCommands.toString()));  
     } else {
       jCommander.usage();
     }

@@ -34,6 +34,9 @@ public class JCommanderCommands {
 
     @Parameter(names = { "-o", "--overwrite" }, description = "Flag to overwrite file if it exists")
     private Boolean overwrite = false;
+    
+    @Parameter(names = { "-d", "--dataSet" }, converter = DataSetConverter.class)
+    private DataSet dataSet = new DataSet();
 
     public File getFile() {
       return file;
@@ -59,12 +62,21 @@ public class JCommanderCommands {
       this.overwrite = overwrite;
     }
 
+    public DataSet getDataSet() {
+      return dataSet;
+    }
+
+    public void setDataSet(DataSet dataSet) {
+      this.dataSet = dataSet;
+    }
+
     @Override
     public String toString() {
       return "JCommanderImportCommands{" +
           "file=" + file +
           ", dataType=" + dataType +
           ", overwrite=" + overwrite +
+          ", dataSet=" + dataSet.toString() +
           '}';
     }
   }
